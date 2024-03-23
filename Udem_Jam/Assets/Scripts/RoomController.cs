@@ -10,7 +10,7 @@ public class RoomController : MonoBehaviour
     void Start()
     {
         started = false;
-        //spawn enemies
+        //spawn or activate enemies
         started = true;
 
     }
