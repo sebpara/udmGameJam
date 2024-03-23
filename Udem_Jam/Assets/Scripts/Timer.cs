@@ -16,6 +16,17 @@ public class Timer : MonoBehaviour
     void Update()
     {
         currentTime = countDown ? currentTime -= Time.deltaTime : currentTime += Time.deltaTime;
-        timerText.text = currentTime.ToString();
+        if (hasLimit && ((countDown && currentTime <= timerLimit) || (!countDown && currentTime >= timerLimit))) {
+            currentTime = timerLimit;
+            SetTimerText();
+            enabled = false;
+        }
+        SetTimerText();
     }
+
+    private void SetTimerText() {
+        int minutes = Mathf.FloorToInt(currentTime / 60);
+        int seconds = Mathf.FloorToInt(currentTime % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+}
 }
