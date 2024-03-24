@@ -6,30 +6,43 @@ using UnityEngine;
 public class enemyhp : MonoBehaviour
 {
     private int randomNumber;
+    private GameObject player;
+        float attackRange = 2f; 
+        int damageAmount = 1;
 
     void Start()
     {
         int randomNumber = UnityEngine.Random.Range(0, 15);
-        int buffer = 0;
-        float attackRange = 2f; 
-        int damageAmount = 1;
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
+    void isHit(int buffer){
         while (randomNumber != 7)
         {
             if (Vector3.Distance(transform.position, player.transform.position) <= attackRange)
             {
                 Debug.Log("Player damaged by " + damageAmount + " HP.");
             }
+
+            int tmp = (Mathf.Abs(randomNumber-buffer)/2);
+
+            randomNumber = tmp;
+            
+            if(randomNumber == 7)
+            {
+                Destroy(gameObject);
+            }
+
             switch (randomNumber)
             {
                 case 0:
-                    if(buffer == 0)
+                  if(buffer == 0)
                     {
                         randomNumber++;
                     }
-                    break;
+                      break;
                 case 1:
                     if (buffer == 0)
                     {
@@ -63,19 +76,19 @@ public class enemyhp : MonoBehaviour
                 case 7:
                     break;
                 case 8:
-                    if (buffer == 0)
+                    if (buffer == 1)
                     {
                         randomNumber--;
                     }
                     break;
                 case 9:
-                    if (buffer == 0)
+                    if (buffer == 1)
                     {
                         randomNumber--;
                     }
                     break;
                 case 10:
-                    if (buffer == 0)
+                    if (buffer == 1)
                     {
                         randomNumber--;
                     }
@@ -108,12 +121,6 @@ public class enemyhp : MonoBehaviour
                     break;
             }
         }
-
-        if(randomNumber == 7)
-        {
-            Destroy(gameObject);
-        }
-
     }
 }
 

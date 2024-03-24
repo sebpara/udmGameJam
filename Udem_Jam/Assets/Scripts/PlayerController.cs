@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
     private void Look() { 
         Vector2 aimDirection = mousePosition - rb.position;
         aimAngle = (Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f) + 270;
-        rb.rotation = (aimAngle >= 270 || aimAngle <= 90) ? 180 : 0;
+        //rb.rotation = (aimAngle >= 270 || aimAngle <= 90) ? 180 : 0;
     }
 
     void Changeph() {

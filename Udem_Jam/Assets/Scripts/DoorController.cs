@@ -8,7 +8,8 @@ public class DoorController : MonoBehaviour
     public bool killed;
     void Start()
     {
-        killed = false;
+        this.GetComponent<BoxCollider2D>().enabled = false;
+        this.GetComponent<SpriteRenderer>().color = Color.blue;
     }
 
     // Update is called once per frame
@@ -18,8 +19,7 @@ public class DoorController : MonoBehaviour
     }
 
     public void openDoor(){
-        this.killed = true;
-        this.GetComponent<BoxCollider2D>().enabled = false;
-        this.GetComponent<SpriteRenderer>().color = Color.blue;
+        
+        
     }
 }

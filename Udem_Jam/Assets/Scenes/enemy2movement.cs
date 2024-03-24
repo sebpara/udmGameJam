@@ -13,6 +13,7 @@ public class enemy2movement : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         if (player != null)
         {
             circleCenter = player.position;
