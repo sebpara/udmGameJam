@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     [Header("Vectors")]
     private Vector2 moveDirection;
     private Vector2 mousePosition;
+
+
+    private InputAction scroll2;
     
 
     private void Awake()
@@ -40,6 +43,7 @@ public class PlayerController : MonoBehaviour
         fire.Enable();
         scroll = playerControls.Player.Scroll;
         scroll.Enable();
+        scroll2 = playerControls.Player.ScrollKb;
     }
 
     private void OnDisable()

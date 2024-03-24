@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ScrollKb",
+                    "type": "Button",
+                    "id": "834f4dbe-9c10-4e61-9e82-f4e03b633dcf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -166,12 +175,45 @@
                 },
                 {
                     "name": "",
+                    "id": "083bb31f-6e7e-470e-93ef-37c7f071fb93",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b221b38b-379d-4b34-8340-f9f2ae22af48",
                     "path": "<Mouse>/scroll/y",
                     "interactions": "Press(pressPoint=1.401298E-45,behavior=2)",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "69639936-e7eb-4f72-bb6c-9a7fef336094",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ScrollKb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4f79008b-dc81-4f43-b754-4a3d0f463c20",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ScrollKb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
