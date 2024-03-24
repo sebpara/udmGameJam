@@ -21,7 +21,7 @@ public class TripwireController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         if(col.gameObject.tag=="Player" && !trigger){
             trigger = true;
-            Debug.Log("COLLISION with PLAYER");
+            //Debug.Log("COLLISION with PLAYER");
             enterDoor.GetComponent<SpriteRenderer>().enabled = true;
             enterDoor.GetComponent<BoxCollider2D>().enabled = true;
             enterDoor.GetComponent<DoorController>().enabled = true;

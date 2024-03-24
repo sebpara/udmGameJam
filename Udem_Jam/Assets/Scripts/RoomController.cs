@@ -22,8 +22,8 @@ public class RoomController : MonoBehaviour
             if(!enemyCheck()){
                 for(int i = 0; i < this.gameObject.transform.childCount; i++)
                 {
-                    if(this.gameObject.transform.GetChild(i).tag=="Door"){
-                        Debug.Log(this.gameObject.transform.GetChild(i));
+                    if(this.gameObject.transform.GetChild(i).tag=="Door" && !this.gameObject.transform.GetChild(i).GetComponent<DoorController>().killed){
+                        //Debug.Log(this.gameObject.transform.GetChild(i));
                         this.gameObject.transform.GetChild(i).GetComponent<DoorController>().openDoor();
                     }
                 }
