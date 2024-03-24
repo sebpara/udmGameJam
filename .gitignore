@@ -25,6 +25,7 @@
 
 # Visual Studio cache directory
 .vs/
+./Udem_Jam/Packages
 
 # Gradle cache directory
 .gradle/
