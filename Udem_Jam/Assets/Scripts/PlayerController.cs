@@ -14,14 +14,16 @@ public class PlayerController : MonoBehaviour
     public PlayerControls playerControls;
     private InputAction move;
     private InputAction fire;
-    
+    private InputAction scroll;
     [Header("Properties")]
-    public int ph;
+    public static int ph;
+    public float scrollDirection;
     public float moveSpeed;
+    private float aimAngle;
     [Header("Vectors")]
     private Vector2 moveDirection;
     private Vector2 mousePosition;
-    public float aimAngle;
+    
 
     private void Awake()
     {
@@ -33,23 +35,28 @@ public class PlayerController : MonoBehaviour
         move.Enable();
         fire = playerControls.Player.Fire;
         fire.Enable();
+        scroll = playerControls.Player.Scroll;
+        scroll.Enable();
     }
 
     private void OnDisable()
     {
         move.Disable();
         fire.Disable();
+        scroll.Disable();
     }
 
     void Update()
     {
         ProcessInputs();
-
+        weapon.ph = ph;
     }
 
     void FixedUpdate()
     {
         Move();
+        Look();
+        Changeph();
     }
 
     void ProcessInputs() {
@@ -60,16 +67,26 @@ public class PlayerController : MonoBehaviour
         moveDirection = move.ReadValue<Vector2>();
         mousePosition = SceneCamera.ScreenToWorldPoint(Input.mousePosition);
         weaponParent.PointerPosition = mousePosition;
+        scrollDirection = scroll.ReadValue<float>();
         }
 
     void Move() {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+    }
+
+    private void Look() { 
         Vector2 aimDirection = mousePosition - rb.position;
         aimAngle = (Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f) + 270;
         rb.rotation = (aimAngle >= 270 || aimAngle <= 90) ? 180 : 0;
     }
 
-    void Changeph() { 
-    
+    void Changeph() {
+        if (scrollDirection > 0) {
+            ph += (ph != 14) ? 1 : 0;
+        }
+        if (scrollDirection < 0)
+        {
+            ph -= (ph != 0) ? 1 : 0;
+        }
     }
 }

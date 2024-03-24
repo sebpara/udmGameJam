@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     public float fireForce;
     public float firingSpeed;
     private float currentTime;
+    public int ph;
     //[Header("Vectors")]
 
     void Update() {
@@ -21,6 +22,7 @@ public class Weapon : MonoBehaviour
         if (currentTime <= 0) { 
             GameObject projectile = Instantiate(bullet, firePoint.position, firePoint.rotation);
             projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+            projectile.GetComponent<Bullet>().ph = ph;
             currentTime = firingSpeed;
         }
     }
