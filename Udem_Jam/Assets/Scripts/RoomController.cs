@@ -18,9 +18,17 @@ public class RoomController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!enemyCheck() && started){
-            door.GetComponent<BoxCollider2D>().enabled = false;
-
+        if(started){
+            if(!enemyCheck()){
+                for(int i = 0; i < this.gameObject.transform.childCount; i++)
+                {
+                    if(this.gameObject.transform.GetChild(i).tag=="Door"){
+                        Debug.Log(this.gameObject.transform.GetChild(i));
+                        this.gameObject.transform.GetChild(i).GetComponent<DoorController>().openDoor();
+                    }
+                }
+            }
+            
         }
     }
 
@@ -31,8 +39,9 @@ public class RoomController : MonoBehaviour
                 return true;
             }
         }
-        Debug.Log("opening door");
-        door.GetComponent<SpriteRenderer>().color = Color.blue;
+        //Debug.Log("opening door");
+        //started = false;
+        
         return false;
     }
 }

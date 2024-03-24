@@ -6,7 +6,7 @@ using TMPro;
 
 public class QuestionController : MonoBehaviour
 {
-    public TextMeshPro tmp;
+    public TextMeshPro field;
     Vector3[] positions;
     Quiz[] quizzes;
     // Start is called before the first frame update
@@ -20,7 +20,9 @@ public class QuestionController : MonoBehaviour
         positions[2] = new Vector3(29.3f, 23f, 0f);
 
         instantiateQuestions();
-        Debug.Log(quizzes[0].question);
+        Debug.Log(field.text);
+        field.text = quizzes[0].question;
+       // Debug.Log(tmp.text);
     }
 
     // Update is called once per frame
@@ -30,8 +32,8 @@ public class QuestionController : MonoBehaviour
     }
 
     void instantiateQuestions(){
-        quizzes[0] = new Quiz("Identify a good buffer: \n A) a solution containing small amounts of both a weak acid and its conjugate base \n B) a solution containing significant amounts of both a strong acid and a strong base \n C) a solution containing significant amounts of both a weak acid and its conjugate base", 'C');
-        quizzes[1] = new Quiz("Which of the following solutions represents a good buffer system? \n A) a solution that is 0.10 mol L-1 CH3COOH and 0.10 mol L-1 CH3COOLi \n B) a solution that is 0.10 mol L-1 NaOH and 0.10 mol L-1 KOH \n C) a solution that is 0.10 mol L-1 HCl and 0.10 mol L-1 NH4+", 'A');
+        quizzes[0] = new Quiz("Identify a good buffer: \n\n A) a solution containing small amounts of both a weak acid and its conjugate base \n\n B) a solution containing significant amounts of both a strong acid and a strong base \n\n C) a solution containing significant amounts of both a weak acid and its conjugate base", 'C');
+        quizzes[1] = new Quiz("Which of the following solutions represents a good buffer system? \n\n A) a solution that is 0.10 mol L-1 CH3COOH and 0.10 mol L-1 CH3COOLi \n\n B) a solution that is 0.10 mol L-1 NaOH and 0.10 mol L-1 KOH \n\n C) a solution that is 0.10 mol L-1 HCl and 0.10 mol L-1 NH4+", 'A');
     }
 }
 
