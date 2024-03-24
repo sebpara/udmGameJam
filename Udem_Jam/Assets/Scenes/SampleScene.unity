@@ -6897,7 +6897,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.810363, y: -1.0429324, z: 7.737855, w: -0.34950975}
+  m_margin: {x: 7.810363, y: -0.6945075, z: 7.9941845, w: 0.49080962}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -23212,8 +23212,8 @@ Transform:
   m_GameObject: {fileID: 1438535636}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.555, y: -8.778, z: 0}
-  m_LocalScale: {x: 5.3285117, y: 0.50558, z: 1}
+  m_LocalPosition: {x: -2.76, y: -7.7, z: 0}
+  m_LocalScale: {x: 5.594937, y: 0.50558, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1167792930}
@@ -29151,8 +29151,8 @@ Transform:
   m_GameObject: {fileID: 1916729542}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.20671721, w: 0.9784007}
-  m_LocalPosition: {x: -8.28, y: -9.21, z: 0}
-  m_LocalScale: {x: 5.578952, y: 0.50558, z: 1}
+  m_LocalPosition: {x: -8.89, y: -7.98, z: 0}
+  m_LocalScale: {x: 6.0816154, y: 0.50558, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 208834975}
