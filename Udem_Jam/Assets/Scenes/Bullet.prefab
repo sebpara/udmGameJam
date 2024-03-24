@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 734419447806485519}
   ph: 7
-  bulletDuration: 78
+  bulletDuration: 2
 --- !u!50 &734419447806485519
 Rigidbody2D:
   serializedVersion: 4

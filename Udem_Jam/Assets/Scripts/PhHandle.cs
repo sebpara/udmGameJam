@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PhHandle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public TextMeshProUGUI phtext;
+    public int ph;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        phtext.text = $"Ph: {ph}";
     }
 }

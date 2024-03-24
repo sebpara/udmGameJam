@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public Camera SceneCamera;
     public Weapon weapon;
     public WeaponParent weaponParent;
+    public PhHandle phHandle;
+    public HealthHandle hpHandle;
     public Rigidbody2D rb;
     [Header("Input")]
     public PlayerControls playerControls;
@@ -16,7 +18,8 @@ public class PlayerController : MonoBehaviour
     private InputAction fire;
     private InputAction scroll;
     [Header("Properties")]
-    public static int ph;
+    public int health;
+    public int ph;
     public float scrollDirection;
     public float moveSpeed;
     private float aimAngle;
@@ -50,6 +53,8 @@ public class PlayerController : MonoBehaviour
     {
         ProcessInputs();
         weapon.ph = ph;
+        phHandle.ph = ph;
+        hpHandle.health = health;
     }
 
     void FixedUpdate()
@@ -68,7 +73,7 @@ public class PlayerController : MonoBehaviour
         mousePosition = SceneCamera.ScreenToWorldPoint(Input.mousePosition);
         weaponParent.PointerPosition = mousePosition;
         scrollDirection = scroll.ReadValue<float>();
-        }
+    }
 
     void Move() {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
