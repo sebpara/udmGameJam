@@ -44,6 +44,14 @@ public class QuestionController : MonoBehaviour
             case 2:
                 this.quizzed = new Quiz("Which of the following statements is true? \n\n A) A buffer is an aqueous solution composed of two weak acids. \n\n B) A buffer resists pH change by neutralizing added acids and bases. \n\n C) The common ion in a buffer solution does not have any effect on the dissociation of the acidic component of the buffer solution.", 'B');
                 break;
+            case 3:
+                this.quizzed = new Quiz("Which of the following solutions is a good buffer system? \n\n A) a solution that is 0.10 mol L-1 NaCl and 0.10 mol L-1 HCl \n\n B) a solution that is 0.10 mol L-1 HCN and 0.10 mol L-1 LiCN \n\n C) a solution that is 0.10 mol L-1 NaOH and 0.10 mol L-1 HNO3",'B');
+                break;
+            case 4:
+                this.quizzed = new Quiz("Which of the following is TRUE? \n\n A) An effective buffer has a [conj base]/[weak acid] ratio in the range of 10 - 100. \n\n B) A buffer is most resistant to pH change when [acid] = [conjugate base]. \n\n C) An effective buffer has very small absolute concentrations of acid and conjugate base.", 'B');
+                break;
+            case 5:
+                break;
         }
         activatePortal();
     }
