@@ -46,6 +46,9 @@ public class PlayerController : MonoBehaviour
     }
 
     public void LevelUp(){
+        if(index==3){
+            //game over screen
+        }
         this.GetComponent<Transform>().position = levels[index];
         index++;
     }
